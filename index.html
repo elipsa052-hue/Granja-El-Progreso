@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granja El Progreso - Productos y Servicios</title>
+    <style>
+        :root {
+            --primary-blue: #0b4da2;
+            --gradient-light-blue: #2389da;
+            --gold: #dfb236;
+            --gold-light: #fbe67b;
+            --gold-dark: #b8860b;
+            --white: #ffffff;
+            --dark-text: #1a1a1a;
+            --light-bg: #f4f7fb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: radial-gradient(circle, var(--gradient-light-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo-placeholder {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.5);
+            padding: 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--gold-light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--gold);
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 20px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .item-row:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: 500;
+            color: var(--dark-text);
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--primary-blue);
+            background-color: rgba(11, 77, 162, 0.08);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+        }
+
+        .list-service {
+            list-style: none;
+        }
+
+        .list-service li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--dark-text);
+        }
+
+        .list-service li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--gold-dark);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            border-top: 4px solid var(--gold);
+            font-size: 0.95rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-placeholder">
+            [ Tu Logotipo Aquí ]
+        </div>
+        <h1>Granja El Progreso</h1>
+        <p>Productos del campo frescos y soluciones en tecnología 3D</p>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">Nuestros Productos del Campo</h2>
+        <div class="grid">
+            <!-- Lácteos de Cabra -->
+            <div class="card">
+                <div class="card-header">Lácteos de Cabra 🐐</div>
+                <div class="card-body">
+                    <div class="item-row">
+                        <span class="item-name">Leche de cabra cruda (Litro)</span>
+                        <span class="item-price">$10.000</span>
+                    </div>
+                    <div class="item-row">
+                        <span class="item-name">Kéfir de leche de cabra (250 ml)</span>
+                        <span class="item-price">$13.000</span>
+                    </div>
+                    <div class="item-row">
+                        <span class="item-name">Kéfir de leche de cabra (Litro)</span>
+                        <span class="item-price">$40.000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avicultura -->
+            <div class="card">
+                <div class="card-header">Pollo y Huevos Campesinos 🐔</div>
+                <div class="card-body">
+                    <div class="item-row">
+                        <span class="item-name">Pollo campesino (Libra)</span>
+                        <span class="item-price">$9.000</span>
+                    </div>
+                    <div class="item-row">
+                        <span class="item-name">Huevo campesino (Unidad)</span>
+                        <span class="item-price">$900</span>
+                    </div>
+                    <div class="item-row">
+                        <span class="item-name">Huevo campesino (Docena)</span>
+                        <span class="item-price">$14.000</span>
+                    </div>
+                    <div class="item-row">
+                        <span class="item-name">Huevo campesino (Cubeta)</span>
+                        <span class="item-price">$26.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Servicios de Impresión y Diseño 3D</h2>
+        <div class="grid">
+            <!-- Impresión 3D -->
+            <div class="card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto;">
+                <div class="card-header" style="background-color: var(--gold-dark);">Tecnología e Impresión 3D ⚙️</div>
+                <div class="card-body">
+                    <ul class="list-service">
+                        <li><strong>Modelado y Diseños personalizados:</strong> Creamos piezas únicas ajustadas a tus necesidades.</li>
+                        <li><strong>Diseño especializado en programas 3D:</strong> Desarrollo técnico y digital de proyectos.</li>
+                        <li><strong>Collares para mascotas e identificación:</strong> Collares personalizados resistentes, incluyendo diseños ideales para cabras.</li>
+                        <li><strong>Sistemas de identificación para cabras:</strong> Chapas y marcadores únicos para la gestión de tu rebaño.</li>
+                        <li><strong>Autopartes:</strong> Fabricación y replicación de componentes y repuestos automotrices a medida.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Granja El Progreso. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
